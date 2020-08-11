@@ -479,8 +479,12 @@ function IcicleEvent.COMBAT_LOG_EVENT_UNFILTERED(event, ...)
 	local pvpType, isFFA, faction = GetZonePVPInfo();
 	local _, eventType, _, srcName, srcFlags, _, _, _, spellID, spellName = ...
 
-	if (not ((pvpType == "contested" and Icicledb.field) or (pvpType == "hostile" and Icicledb.field) or (pvpType == "friendly" and Icicledb.field) or (currentZoneType == "pvp" and Icicledb.battleground) or (currentZoneType == "arena" and Icicledb.arena) or Icicledb.all)) then
-	return
+	if (not ((pvpType == "hostile" and Icicledb.field) or 
+		     (pvpType == "friendly" and Icicledb.field) or 
+		     (currentZoneType == "pvp" and Icicledb.battleground) or 
+		     (currentZoneType == "arena" and Icicledb.arena) or 
+		     Icicledb.all)) then
+		return
 	end
 	if IcicleCds[spellID] and bit.band(srcFlags, COMBATLOG_OBJECT_REACTION_HOSTILE) ~= 0 then
 		local Name = strmatch(srcName, "[%P]+")

@@ -2,7 +2,8 @@
 ## Title: Icicle
 ## Notes: Adds enemy cooldowns to their nameplate
 ## SavedVariables: Icicledb
-## Author: Thoth, Trolollolol - Sargeras - Molten-wow.com
+## Author: Thoth, Trolollolol - Sargeras - Molten-wow.com, Sunmudang@style
+## Version: 1.0.s1
 
 Icicle.xml
 settings.lua
